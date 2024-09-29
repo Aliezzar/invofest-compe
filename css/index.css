@@ -187,6 +187,11 @@ nav.sticky ul li a {
     -o-border-radius: 10px;
 }
 
+.banner .judul h1 .typing-text {
+    background-color: rgba(0, 128, 0, 0.4);
+    padding: 0px 4px;
+}
+
 .awan {
     background-attachment: fixed;
     background-position: center;

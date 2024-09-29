@@ -16,8 +16,9 @@ menuToggle.addEventListener('click', function () {
 
 // Untuk animasi mengetik
 var typed = new Typed('.typing-text', {
-    strings: ["Masa Depan Berkelanjutan.", "Planet yang Lebih Baik."],
+    strings: ["‎ Masa Depan Berkelanjutan.", "‎ Planet yang Lebih Baik."],
     typeSpeed: 50,
     backSpeed: 25,
+    backDelay: 2000,
     loop: true,
 });
