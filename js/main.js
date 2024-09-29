@@ -18,5 +18,6 @@ menuToggle.addEventListener('click', function () {
 var typed = new Typed('.typing-text', {
     strings: ["Masa Depan Berkelanjutan.", "Planet yang Lebih Baik."],
     typeSpeed: 50,
-    loop: true
+    backSpeed: 30,
+    loop: true,
 });

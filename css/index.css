@@ -388,6 +388,12 @@ nav.sticky ul li a {
     }
 
     /* Navbar end */
+
+    .banner .judul h1 {
+        width: 80vw;
+        font-size: 0.6em;
+        text-align: left;
+    }
 }
 
 /* Responsive End */
