@@ -193,11 +193,16 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 10px;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
-        .banner .judul h1 .typing-text {
-            background-color: rgba(0, 128, 0, 0.4);
-            padding: 0px 4px;
+        .typing-text {
+            border-bottom: solid;
+        }
+        
+        .typed-cursor {
+            color: rgb(40, 255, 40);
+            border: transparent;
         }
 
         .awan {
@@ -451,30 +456,30 @@
     <!-- typing effect -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
-    window.addEventListener("scroll", function () {
-        var nav = this.document.querySelector("nav");
-        nav.classList.toggle("sticky", window.scrollY > 0);
-    });
-    
-    
-    // untuk hamburger
-    
-    const menuToggle = document.querySelector('.menu-toggle input');
-    const nav = document.querySelector('nav ul');
-    
-    menuToggle.addEventListener('click', function () {
-        nav.classList.toggle('slide')
-    });
-    
-    
-    // Untuk animasi mengetik
-    var typed = new Typed('.typing-text', {
-        strings: ["‎ Masa Depan Berkelanjutan.", "‎ Planet yang Lebih Baik."],
-        typeSpeed: 50,
-        backSpeed: 25,
-        backDelay: 2000,
-        loop: true,
-    });
+        window.addEventListener("scroll", function () {
+            var nav = this.document.querySelector("nav");
+            nav.classList.toggle("sticky", window.scrollY > 0);
+        });
+
+
+        // untuk hamburger
+
+        const menuToggle = document.querySelector('.menu-toggle input');
+        const nav = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', function () {
+            nav.classList.toggle('slide')
+        });
+
+
+        // Untuk animasi mengetik
+        var typed = new Typed('.typing-text', {
+            strings: ["‎ Alam yang Berkelanjutan.", "‎ Masa Depan Berkelanjutan.", "‎ Planet yang Lebih Baik."],
+            typeSpeed: 60,
+            backSpeed: 25,
+            backDelay: 2000,
+            loop: true
+        });
     </script>
 </body>
 
