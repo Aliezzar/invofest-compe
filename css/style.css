@@ -173,13 +173,11 @@ nav.sticky ul li a {
     background: rgba(0, 0, 0, 0.4);
     font-family: "Poppins", system-ui;
     font-size: 2em;
-    margin: 0px 50px;
     color: white;
     font-weight: 700;
     text-align: center;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
     padding: 20px;
-    line-height: 1.5em;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -232,23 +230,52 @@ nav.sticky ul li a {
 }
 
 .banner2 {
+    position: relative;
     background-image: url(../img/bg-page2.png);
-    width: 100vw;
+    width: 100%;
+    margin-inline: auto;
     height: 100vh;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
     align-items: center;
+    padding: 2rem 4rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
 }
 
-.banner2 h1 {
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+.banner2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Overlay */
+    z-index: 1;
 }
+
+.banner2 .content-description {
+    position: relative;
+    z-index: 2; 
+    color: white;
+    padding-top: 59px;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.banner2 .content-image img {
+    position: relative;
+    z-index: 2; 
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
 
 
 
@@ -257,10 +284,56 @@ nav.sticky ul li a {
 
 
 /* Responsive */
-
+/* Tablet-Monitor kecil */
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .banner2 {
+        display: block;
+    }
+    .banner2 .content-description h1{
+        text-align: center;
+    }
+    
+    .banner2 .content-description p{
+        text-align: justify;
+    }
+    
+    .banner2 .content-image img {
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+}
 /* tablet */
 @media screen and (max-width: 768px) {
-
+    .banner2 {
+        display: block;
+    }
+    .banner2 .content-description h1{
+        text-align: center;
+    }
+    
+    .banner2 .content-description p{
+        text-align: justify;
+    }
+    
+    .banner2 .content-image img {
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    
     /* Navbar */
     nav ul {
         width: 50%;
@@ -270,7 +343,7 @@ nav.sticky ul li a {
 }
 
 /* mobile */
-@media screen and (max-width: 576px) {
+@media screen and (min-width: 0px) and (max-width: 746px) {
 
     /* Navbar */
     nav {
@@ -424,6 +497,29 @@ nav.sticky ul li a {
         font-size: 0.6em;
         text-align: left;
     }
+
+    /* Halaman Kedua */
+
+    .banner2 {
+        display: block;
+    }
+    
+    .banner2 .content-description {
+        text-align: justify;
+        font-size: 15px;
+    }
+    .banner2 .content-description h1{
+        text-align: center;
+    }
+
+    .banner2 .content-image img {
+        width: 100%;
+        border-radius: 7%;
+        -webkit-border-radius: 7%;
+        -moz-border-radius: 7%;
+        -ms-border-radius: 7%;
+        -o-border-radius: 7%;
+}
 }
 
 /* Responsive End */

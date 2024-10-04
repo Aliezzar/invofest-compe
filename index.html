@@ -31,7 +31,7 @@
             <span></span>
             <span></span>
         </div>
-    </nav> 
+    </nav>
     <section class="banner">
         <div class="judul">
             <h1>Inovasi Digital untuk<span class="typing-text"></span></h1>
@@ -39,44 +39,28 @@
     </section>
     <section class="awan">
     </section>
-    
+
     <!-- halaman kedua -->
-     <section class="banner2">
-        <h1>MASALAH LINGKUNGAN ALAM yang SERING TERJADI</h1>
-     </section>
-     <section class="asap `"></section>
+    <section class="banner2">
+        <div class="content-description">
+            <h1 class="title">Kasus Deforestrasi</h1>
+            <p style="color: white;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat odio
+                exercitationem illo ea corporis aperiam, harum error? Illo, quis? Ex earum eaque alias soluta minima
+                ducimus temporibus excepturi, molestiae eum quia quasi. Nemo, debitis vitae? Fugiat unde odit iure,
+                quaerat officia voluptates omnis non hic laborum ullam quo rerum beatae dolor sint! Nesciunt iure
+                incidunt laborum?</p>
+        </div>
+        <div class="content-image">
+            <img src="img/masalah.png" alt="masalah lingkungan">
+        </div>
+    </section>
+    <section class="asap"></section>
 
 
-     
+
     <!-- typing effect -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <!-- javascript -->
-    <script>
-        window.addEventListener("scroll", function () {
-            var nav = this.document.querySelector("nav");
-            nav.classList.toggle("sticky", window.scrollY > 0);
-        });
-
-
-        // untuk hamburger
-
-        const menuToggle = document.querySelector('.menu-toggle input');
-        const nav = document.querySelector('nav ul');
-
-        menuToggle.addEventListener('click', function () {
-            nav.classList.toggle('slide')
-        });
-
-
-        // Untuk animasi mengetik
-        var typed = new Typed('.typing-text', {
-            strings: ["‎ Alam yang Berkelanjutan.", "‎ Masa Depan Berkelanjutan.", "‎ Planet yang Lebih Baik."],
-            typeSpeed: 60,
-            backSpeed: 25,
-            backDelay: 2000,
-            loop: true
-        });
-    </script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
