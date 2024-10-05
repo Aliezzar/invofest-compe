@@ -7,26 +7,6 @@
     font-style: normal;
 }
 
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: transparent;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 6px;
-    border: 2px solid black;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
 html {
     scrollbar-width: thin;
     scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
@@ -35,8 +15,22 @@ html {
 
 body {
     background: #000;
-    min-height: 200vh;
+    min-height: 300vh;
     overflow-x: hidden;
+    overflow-y: scroll;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../img/bg-2.png);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 /* Navbar */
@@ -152,7 +146,6 @@ nav.sticky ul li a {
     color: #fff;
 }
 
-
 .banner {
     display: flex;
     justify-content: center;
@@ -162,16 +155,37 @@ nav.sticky ul li a {
     height: 100vh;
     background: url('../img/background.png');
     background-size: cover;
-    opacity: 0.7;
     background-attachment: fixed;
-    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.banner::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(17, 21, 24, 1) 1%, rgba(255, 255, 255, 0) 50%);
 }
 
 .judul {
+    position: relative;
+    z-index: 2;
     background: rgba(0, 0, 0, 0.4);
-    font-family: "Poppins", system-ui;
     font-size: 2em;
     color: white;
     font-weight: 700;
@@ -179,11 +193,6 @@ nav.sticky ul li a {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .typing-text {
@@ -219,7 +228,7 @@ nav.sticky ul li a {
     0% {
         background-position: 0px;
     }
-
+    
     100% {
         background-position: 5440px;
     }
@@ -228,122 +237,89 @@ nav.sticky ul li a {
 .menu-toggle input {
     display: none;
 }
-
-.banner2 {
-    position: relative;
-    background-image: url(../img/bg-page2.png);
-    width: 100%;
-    margin-inline: auto;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    align-items: center;
-    padding: 2rem 4rem;
-    flex: 1;
-    display: flex;
-    align-items: center;
-}
-
-.banner2::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Overlay */
-    z-index: 1;
-}
-
-.banner2 .content-description {
-    position: relative;
-    z-index: 2; 
-    color: white;
-    padding-top: 59px;
-    justify-content: center;
-    font-size: 30px;
-}
-
-.banner2 .content-image img {
-    position: relative;
-    z-index: 2; 
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-}
-
-
-
-
 /* Navbar end */
 
+/* About */
+#about {
+    width: 100%;
+    padding: 2.5rem 0;
+}
 
+#about h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-container {
+    margin: auto auto;
+}
+
+.image-gallery {
+    display: flex;
+    width: 100%;
+    min-height: 300px;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+}
+
+.image-box {
+    width: 22%;
+    height: 250px;
+    position: relative;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+
+.image-box:nth-child(odd) {
+    align-self: flex-end;
+}
+
+.image-box img:hover {
+    opacity: 0.5;
+}
+
+.about-info {
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 0px 40px;
+}
+
+.about-info ul li h2 i {
+    color: #2e7d32;
+    margin-right: 10px;
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
+/* About End */
 
 /* Responsive */
-/* Tablet-Monitor kecil */
-@media screen and (min-width: 768px) and (max-width: 1200px) {
-    .banner2 {
-        display: block;
-    }
-    .banner2 .content-description h1{
-        text-align: center;
-    }
-    
-    .banner2 .content-description p{
-        text-align: justify;
-    }
-    
-    .banner2 .content-image img {
-        border-radius: 20px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        -o-border-radius: 20px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-    }
-}
+
 /* tablet */
-@media screen and (max-width: 768px) {
-    .banner2 {
-        display: block;
-    }
-    .banner2 .content-description h1{
-        text-align: center;
-    }
-    
-    .banner2 .content-description p{
-        text-align: justify;
-    }
-    
-    .banner2 .content-image img {
-        border-radius: 20px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        -o-border-radius: 20px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-    }
+@media screen and (min-width: 768px) and (max-width: 1040) {
     
     /* Navbar */
     nav ul {
         width: 50%;
     }
-
-    /* Navbar end */
+    
+    /* Navbar end */  
 }
 
 /* mobile */
-@media screen and (min-width: 0px) and (max-width: 746px) {
+@media screen and (max-width: 768px)  {
 
     /* Navbar */
     nav {
@@ -499,27 +475,29 @@ nav.sticky ul li a {
     }
 
     /* Halaman Kedua */
-
-    .banner2 {
+    .image-gallery {
         display: block;
+        margin-bottom: 2rem;
     }
-    
-    .banner2 .content-description {
-        text-align: justify;
-        font-size: 15px;
+
+    .image-box {
+        width: 100%;
+        margin-bottom: 1rem;
     }
-    .banner2 .content-description h1{
+
+    .about-info {
+        text-align: start;
+        font-size: 0.9rem;
+    }
+
+    #about h1 {
+        font-size: 2rem;
+    }
+
+    .about-info ul li h2 {
+        list-style-type: decimal;
         text-align: center;
     }
-
-    .banner2 .content-image img {
-        width: 100%;
-        border-radius: 7%;
-        -webkit-border-radius: 7%;
-        -moz-border-radius: 7%;
-        -ms-border-radius: 7%;
-        -o-border-radius: 7%;
-}
 }
 
 /* Responsive End */
