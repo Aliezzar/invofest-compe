@@ -362,6 +362,11 @@ footer {
     margin: 0;
 }
 
+/* Halaman 4 */
+.card {
+    width: 222222222222222222222px;
+}
+
 /* Responsive */
 
 /* tablet */
@@ -524,6 +529,7 @@ footer {
     }
 
     /* Navbar end */
+    
 
     .banner .judul h1 {
         width: 80vw;
