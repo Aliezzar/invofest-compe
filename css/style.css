@@ -307,6 +307,15 @@ nav.sticky ul li a {
 /* About End */
 
 /* Halaman 3 */
+.peta-deforestasi h1 {
+    text-align: center;
+}
+.peta-deforestasi .content-peta {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Halaman 4 */
 
 .container-jenis-hutan .hutan1 {
     margin-top: 30px;
@@ -562,7 +571,7 @@ footer {
         text-align: center;
     }
 
-    /* Halaman ketiga */
+    /* Halaman keempat */
     .container-jenis-hutan .hutan1,
     .container-jenis-hutan .hutan2 {
         flex-direction: column;
